@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test Suite Login" parallel="classes" thread-count="2">
+    <test name="Verify Login" thread-count="2">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="UI.VerifyInvalidLogin" />
+            <class name="UI.VerifyValidLogin" />
+        </classes>
+    </test>
+</suite>
