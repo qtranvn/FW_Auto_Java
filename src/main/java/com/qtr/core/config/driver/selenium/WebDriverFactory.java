@@ -38,8 +38,10 @@ public class WebDriverFactory {
     }
 
     public WebDriver getWebDriver() {
-        if (driverStorage.size() == 0)
+        if (driverStorage.size() == 0) {
             System.out.println("*****No existing thread id\n");
+            return null;
+        }
 
         if (driverStorage.containsKey(Thread.currentThread().getId()))
             return driverStorage.get(Thread.currentThread().getId());

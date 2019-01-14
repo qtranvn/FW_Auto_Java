@@ -15,13 +15,13 @@ public class FileHelper {
         try {
             input = new FileInputStream(currentDir + defaultPropertyFilePath + propertyFileName + ".properties");
             prop.load(input);
-            return prop;
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
             if (input != null) {
                 try {
                     input.close();
+                    return prop;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
